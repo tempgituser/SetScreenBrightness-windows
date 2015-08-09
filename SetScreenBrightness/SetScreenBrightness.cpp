@@ -17,8 +17,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	if (brightness < 0){
 		brightness = 0;
 	}
-	if (brightness > 200){
-		brightness = 200;
+	if (brightness > 256){
+		brightness = 256;
+	}
+	if (GetBrightness() == brightness){
+		return 0;
 	}
 	cout << "ÉèÖÃÁÁ¶È£º" << brightness << endl;
 	int err = SetBrightness(brightness);

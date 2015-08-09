@@ -16,6 +16,7 @@
 
 #include <windows.h>
 #include <iostream>
+int GetBrightness();
 int SetBrightness(int brightness);
 int wstrlen(_TCHAR * wstr);
 char * wstrdup(_TCHAR * wSrc);

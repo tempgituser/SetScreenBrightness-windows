@@ -7,6 +7,21 @@
 // TODO:  在 STDAFX.H 中
 // 引用任何所需的附加头文件，而不是在此文件中引用
 
+int GetBrightness(){
+	void * lpGamma = NULL;
+	int iArrayValue;
+	WORD gMap[3][256] = { 0 };
+	lpGamma = &gMap;
+	HDC hdc = ::GetDC(NULL);
+	if (NULL == hdc)
+		return -1;
+	if (FALSE == GetDeviceGammaRamp(hdc, lpGamma))
+		return -2;
+	int light = gMap[0][1] - 128;
+	return light;
+
+}
+
 int SetBrightness(int brightness)
 {
 	void * lpGamma = NULL;
